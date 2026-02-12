@@ -151,28 +151,25 @@ Table of all 36 bundled SRFIs (6 built-in + 30 from .sld files) with
 SRFI number, title, import form, and link to official SRFI document.
 Usage examples for SRFI 1, 13, and 69.
 
-* Phase 5 — Supplementary Pages                                     :content:
+* DONE Phase 5 — Supplementary Pages                                :content:
 
-** TODO About page
+** DONE About page
 
-- What wile is (elevator pitch)
-- Architecture overview (Reader → Expander → Compiler → VM)
-- Design philosophy (compilation-only, no interpreter)
-- Implementation language (OCaml) and why
-- License (MIT)
+Elevator pitch, architecture overview (Reader → Expander → Compiler → VM),
+design philosophy (compilation-only, batteries-included, embeddable),
+implementation details (OCaml, 37 modules, 12 bytecode instructions), and
+license (MIT).
 
-** TODO Contributing guide
+** DONE Contributing guide
 
-- How to report bugs
-- How to contribute code
-- Development setup (link to =../wile/CLAUDE.md= conventions)
-- Link to GitHub issues
+Bug reporting, development setup (clone, opam switch, deps), TDD practices
+(red-green-refactor), code conventions (interfaces, small functions),
+project structure, PR workflow, and link to GitHub Discussions.
 
-** TODO Releases / Changelog page
+** DONE Releases / Changelog page
 
-- Current version and date
-- Changelog entries (can be sourced from git tags or a CHANGELOG file)
-- Shows the project is actively maintained
+Placeholder noting pre-release status, with build-from-source instructions
+and links to repo/discussions. Will be updated when versioned releases ship.
 
 * Phase 6 — Polish and Deploy                                       :infra:
 
