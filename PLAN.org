@@ -122,61 +122,34 @@ code. This is the #1 conversion page.
 - Tabbed setup for VS Code, Emacs (eglot), Neovim (nvim-lspconfig)
 - All pointing at =wile lsp= as the server command
 
-* Phase 4 — Documentation Hub                                         :docs:
+* DONE Phase 4 — Documentation Hub                                      :docs:
 
 Progressively disclosed documentation. Start with the most useful pages and
 expand over time. Every page should be self-contained and linkable.
 
-** TODO Documentation landing page
+** DONE Documentation landing page
 
-A curated index organized by skill level:
+Cards linking to: Getting Started, Language Guide, Tool Guide, SRFI Reference.
 
-- *Getting Started* (link to Phase 3 page)
-- *Language Guide* — tutorial-style introduction to wile's Scheme
-- *Reference* — comprehensive coverage of built-ins and behavior
-- *Tool Guide* — REPL, LSP, DAP, profiler, package manager
-- *Embedding Guide* — OCaml and C APIs
-- *SRFI Reference* — list of bundled SRFIs with links
+** DONE Language guide (tutorial-style)
 
-** TODO Language guide (tutorial-style)
+11 chapters with runnable examples:
+1. Expressions & Values, 2. Definitions & Functions, 3. Data Types,
+4. Numeric Tower, 5. Control Flow, 6. Records, 7. Macros,
+8. Libraries, 9. Continuations, 10. I/O & Ports, 11. Error Handling.
 
-Progressive chapters:
+** DONE Tool guide
 
-1. Expressions and values
-2. Definitions and functions
-3. Data types (pairs, lists, vectors, strings, hash tables)
-4. Numeric tower (fixnum → bignum → rational → flonum → complex)
-5. Control flow (conditionals, loops, recursion, tail calls)
-6. Pattern matching and records (=define-record-type=)
-7. Macros (=syntax-rules=, =define-syntax=)
-8. Libraries (=define-library=, =import=, =export=)
-9. Continuations (=call/cc=, =dynamic-wind=)
-10. I/O and ports
-11. Error handling (=guard=, exceptions)
+6 pages covering REPL (commands, paredit, themes, keybindings), LSP server
+(capabilities, editor config), DAP debugger (breakpoints, stepping,
+inspection), profiler (text/flamegraph/trace formats), package manager
+(install, list, venvs), and build system (watch, graph, test runner).
 
-Each chapter should have runnable examples verified against =../wile=.
+** DONE SRFI reference page
 
-** TODO Tool guide
-
-Separate pages for each developer tool:
-
-- REPL (features, keybindings, paredit mode, customization)
-- LSP server (capabilities, configuration)
-- DAP debugger (setup, breakpoints, stepping)
-- Profiler (usage, flame graph output)
-- Package manager (creating packages, dependencies, virtual environments)
-- Build system (FASL compilation, ahead-of-time compilation)
-
-** TODO SRFI reference page
-
-A table of all 31+ bundled SRFIs with:
-
-- SRFI number and title
-- Link to the official SRFI document
-- Import form: =(import (srfi N))=
-- Brief one-line description
-
-Generate this from the =../wile/stdlib/srfi/= directory if possible.
+Table of all 36 bundled SRFIs (6 built-in + 30 from .sld files) with
+SRFI number, title, import form, and link to official SRFI document.
+Usage examples for SRFI 1, 13, and 69.
 
 * Phase 5 — Supplementary Pages                                     :content:
 
