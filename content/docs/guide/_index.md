@@ -1,7 +1,7 @@
----
-title: Guide
-weight: 2
----
++++
+title = "Guide"
+weight = 2
++++
 
 The guide covers wile's features in depth.
 

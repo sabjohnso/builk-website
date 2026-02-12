@@ -96,32 +96,31 @@ Embeddable, Interactive REPL.
 - Documentation (Get Started, Guide)
 - Community (GitHub Discussions, Contributing)
 
-* Phase 3 — Getting Started                                          :content:
+* DONE Phase 3 — Getting Started                                     :content:
 
 A single, self-contained page that takes someone from zero to running wile
 code. This is the #1 conversion page.
 
-** TODO Installation instructions
+** DONE Installation instructions
 
-- Prerequisites (OCaml 5.3.0, opam, GMP)
-- Step-by-step commands (opam switch, deps, build, install)
-- Platform notes (Debian/Ubuntu, macOS)
-- Verify installation: =wile --version=
+- Prerequisites section with OCaml 5.3.0+BER, opam, GMP
+- Tabbed GMP install (Debian/Ubuntu vs macOS)
+- Step-by-step: clone, opam switch, deps, build, install
+- Verify with =wile -e '(display "ready")'=
 
-** TODO First program walkthrough
+** DONE First program walkthrough
 
-- Start the REPL: =wile repl=
-- Evaluate expressions interactively
-- Write a =.scm= file and run it: =wile run hello.scm=
-- Compile to a standalone binary: =wile compile hello.scm=
-- Use a shebang script: =#!/usr/bin/env wile=
+- REPL usage (=wile= with no args), REPL commands (=,help=, =,paredit=)
+- Write and run =hello.scm= (=wile hello.scm=)
+- Single expression eval (=wile -e=)
+- Compile to FASL bytecode (=wile compile -o .fasl=)
+- Compile to standalone executable (=wile compile --exe=)
+- Shebang scripts (=#!/usr/bin/env wile=)
 
-** TODO Editor setup
+** DONE Editor setup
 
-- VS Code + LSP (brief)
-- Emacs + LSP (brief)
-- Vim/Neovim + LSP (brief)
-- Point to the LSP section in the reference for details
+- Tabbed setup for VS Code, Emacs (eglot), Neovim (nvim-lspconfig)
+- All pointing at =wile lsp= as the server command
 
 * Phase 4 — Documentation Hub                                         :docs:
 

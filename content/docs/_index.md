@@ -1,9 +1,10 @@
----
-title: Documentation
-toc: false
-cascade:
-  type: docs
----
++++
+title = "Documentation"
+toc = false
+
+[cascade]
+  type = "docs"
++++
 
 Welcome to the wile documentation. Choose a section to get started.
 
