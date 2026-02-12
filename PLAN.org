@@ -36,82 +36,65 @@ GNU Guile, CHICKEN Scheme).
 3. OCaml developers interested in the implementation.
 4. Students and educators.
 
-* Phase 1 — Foundation                                                :infra:
+* DONE Phase 1 — Foundation                                           :infra:
 
 Set up the Hugo project so it builds, has a theme, and can be deployed.
 
-** TODO Choose and install a Hugo theme
+** DONE Choose and install a Hugo theme
 
-Pick a clean, documentation-friendly theme. Strong candidates:
+Chose [[https://github.com/imfing/hextra][Hextra]] (v0.11.1) — modern docs theme with built-in search, dark mode,
+and good typography. Installed via Hugo Modules (not git submodule).
 
-- [[https://github.com/imfing/hextra][Hextra]] — modern docs theme (Next.js-style), built-in search, dark mode
-- [[https://github.com/alex-shpak/hugo-book][Hugo Book]] — clean documentation layout
-- [[https://github.com/adityatelange/hugo-PaperMod][PaperMod]] — minimal, fast, well-maintained
+** DONE Create =hugo.toml= with base configuration
 
-Criteria: dark mode support, syntax highlighting, responsive, search, minimal
-JavaScript, active maintenance, good typography.
+Site title, base URL, language, Hextra theme via module, menu structure,
+and syntax highlighting configured.
 
-Install as a git submodule under =themes/=.
+** DONE Add =.gitignore=
 
-** TODO Create =hugo.toml= with base configuration
+Excludes =public/=, =resources/=, =.hugo_build.lock=.
 
-- Site title, base URL, language
-- Theme selection
-- Menu structure
-- Syntax highlighting settings (Scheme support via Chroma)
-- Taxonomies (tags for docs, if needed)
+** DONE Verify the site builds and serves locally
 
-** TODO Add =.gitignore=
+Site builds and serves with Hextra theme via =nix develop --command hugo server -D=.
 
-Exclude =public/=, =resources/=, =.hugo_build.lock=.
-
-** TODO Verify the site builds and serves locally
-
-=hugo server -D= should render a placeholder page with the chosen theme.
-
-* Phase 2 — Homepage                                                 :content:
+* DONE Phase 2 — Homepage                                            :content:
 
 The homepage is the most important page. It must answer three questions in
 under 10 seconds: What is wile? Why should I care? How do I start?
 
-** TODO Hero section
+** DONE Hero section
 
-- Tagline (something like: "A modern R7RS Scheme — from REPL to standalone
-  binary")
-- 1–2 sentences of description
-- Primary CTA: "Get Started" button
-- Secondary CTA: "Try an Example" or link to documentation
+- Headline: "An R7RS Scheme Compiler"
+- Subtitle with key selling points (bytecode, numeric tower, macros, SRFIs, tooling)
+- Primary CTA: "Get Started" button (hero-button shortcode)
+- Secondary CTA: "Documentation →" outline button (raw HTML)
 
-** TODO Code showcase section
+** DONE Code showcase section
 
-3–4 tabbed or stacked code examples demonstrating wile's character:
+4 tabbed examples using Hextra =tabs= / =tab= shortcodes, preceded by
+a "See It in Action" section heading:
 
-1. *Hello World / basics* — first-class functions, clean syntax
-2. *Macros* — hygienic macros with =syntax-rules=
-3. *REPL session* — show the interactive experience (paredit, highlighting)
-4. *Real program* — something practical (e.g., HTTP, file processing, or a
-   small DSL) to show wile is not just a toy
+1. *Basics* — FizzBuzz with named =let=, =cond=, I/O
+2. *Macros* — =define-syntax= / =syntax-rules= (=when= and =swap!=)
+3. *Numeric Tower* — rational and complex arithmetic (verified against test suite)
+4. *Libraries* — =define-library= / =import= / =export= R7RS module system
 
-All examples must be valid R7RS that wile can actually run. Verify against
-=../wile= before publishing.
+All examples verified against =../wile= test suite. Removed =rationalize=
+(not implemented in wile).
 
-** TODO Feature highlights section
+** DONE Feature highlights section
 
-A grid of 4–6 cards, each with a short title and one sentence:
+6-card grid using Hextra =feature-grid= / =feature-card= shortcodes:
+R7RS Compliant, 36 Bundled SRFIs, Developer Tooling, Compiles to Bytecode,
+Embeddable, Interactive REPL.
 
-- *R7RS Compliant* — all 16 standard libraries
-- *Batteries Included* — 31+ bundled SRFIs
-- *Developer Tools* — LSP, DAP debugger, profiler
-- *Fast Iteration* — FASL bytecode caching, ahead-of-time compilation
-- *Embeddable* — OCaml and C APIs
-- *Modern REPL* — syntax highlighting, paredit, rainbow parens, completion
+** DONE Footer
 
-** TODO Footer
-
-Organized columns:
-- Project (About, License, GitHub)
-- Documentation (Get Started, Guide, Reference, SRFIs)
-- Community (Discussions, Contributing)
+3-column footer via =layouts/_partials/custom/footer.html=:
+- Project (About, License/MIT, GitHub)
+- Documentation (Get Started, Guide)
+- Community (GitHub Discussions, Contributing)
 
 * Phase 3 — Getting Started                                          :content:
 
