@@ -171,38 +171,48 @@ project structure, PR workflow, and link to GitHub Discussions.
 Placeholder noting pre-release status, with build-from-source instructions
 and links to repo/discussions. Will be updated when versioned releases ship.
 
-* Phase 6 — Polish and Deploy                                       :infra:
+* DONE Phase 6 — Polish and Deploy                                    :infra:
 
-** TODO Syntax highlighting for Scheme
+** DONE Syntax highlighting for Scheme
 
-Ensure Hugo's Chroma highlighter renders Scheme correctly. If not, configure
-a custom lexer or use a client-side highlighter as a fallback.
+Hugo's Chroma highlighter renders Scheme correctly out of the box with
+CSS classes (=noClasses = false=). Keywords, builtins, numbers, strings,
+and comments are all tokenized.
 
-** TODO Search
+** DONE Search
 
-Enable the theme's built-in search (most modern Hugo themes support this) or
-add a lightweight client-side search (Pagefind, Fuse.js).
+Hextra's built-in FlexSearch was already configured in Phase 1 (search
+menu item with =type = "search"=).
 
-** TODO SEO and metadata
+** DONE SEO and metadata
 
-- Open Graph tags for social sharing
-- Descriptive =<title>= and =<meta description>= on every page
-- Canonical URLs
+- Site =description= in hugo.toml for Open Graph fallback
+- =enableRobotsTXT = true= generates robots.txt
+- Hextra auto-generates Open Graph and Twitter Card meta tags
+- =theme-color= meta tag set to =#4f46e5= via custom head partial
 
-** TODO Favicon and branding
+** DONE Favicon and branding
 
-- Design or commission a simple logo/favicon
-- Consistent color palette and typography
+- SVG favicon (lambda symbol on indigo background) in =static/favicon.svg=
+- Dark mode variant in =static/favicon-dark.svg= (lighter indigo)
+- Custom =head-end.html= partial links both with media query
 
-** TODO Deployment pipeline
+** DONE Deployment pipeline
 
-- GitHub Actions: build on push to =main=, deploy to GitHub Pages
-- Verify the site builds cleanly in CI before deploying
+GitHub Actions workflow in =.github/workflows/deploy.yml=:
+- Triggers on push to =main= and manual dispatch
+- Sets up Go + Hugo extended 0.155.2
+- Builds with =hugo --minify=
+- Deploys to GitHub Pages via =actions/deploy-pages@v4=
 
 ** TODO Custom domain (if desired)
 
-- Configure DNS and Hugo's =baseURL=
-- HTTPS via GitHub Pages or Cloudflare
+Deferred — requires DNS configuration and user decision on domain name.
+When ready: configure DNS, update =baseURL= in hugo.toml, enable HTTPS
+via GitHub Pages.
+
+Also updated navigation menu: added Guide, Tools, and About links;
+reweighted items for better information architecture.
 
 * Phase 7 — Future Enhancements                                     :future:
 

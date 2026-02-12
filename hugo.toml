@@ -1,6 +1,8 @@
 baseURL = "https://sabjohnso.github.io/wile-website/"
 title = "wile"
 languageCode = "en-us"
+description = "An R7RS Scheme compiler written in OCaml. Compiles to bytecode, full numeric tower, hygienic macros, 36 SRFIs, LSP, debugger, and profiler."
+enableRobotsTXT = true
 
 # Hextra theme via Hugo Modules
 [module]
@@ -20,20 +22,30 @@ languageCode = "en-us"
   weight = 1
 
 [[menu.main]]
-  name = "Get Started"
-  pageRef = "/docs/getting-started"
+  name = "Guide"
+  pageRef = "/docs/guide"
   weight = 2
 
 [[menu.main]]
-  name = "Search"
+  name = "Tools"
+  pageRef = "/docs/tools"
   weight = 3
+
+[[menu.main]]
+  name = "About"
+  pageRef = "/about"
+  weight = 4
+
+[[menu.main]]
+  name = "Search"
+  weight = 5
   [menu.main.params]
     type = "search"
 
 [[menu.main]]
   name = "GitHub"
   url = "https://github.com/sabjohnso/wile"
-  weight = 4
+  weight = 6
   [menu.main.params]
     icon = "github"
 
@@ -48,3 +60,8 @@ languageCode = "en-us"
 [params.editURL]
   enable = true
   base = "https://github.com/sabjohnso/wile-website/edit/main/content"
+
+# SEO
+[params.page.seo]
+  enableOpenGraph = true
+  enableTwitterCards = true
