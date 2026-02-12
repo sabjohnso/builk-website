@@ -1,0 +1,300 @@
+#+TITLE: Wile Website — Implementation Plan
+#+STARTUP: showall
+
+* Overview
+
+This plan lays out the phased construction of the wile-scheme website using
+Hugo. It is informed by a review of how other programming language communities
+present themselves online (Python, Racket, Scala, OCaml, Haskell, Chez Scheme,
+GNU Guile, CHICKEN Scheme).
+
+** Design Principles (distilled from the review)
+
+1. *Code first.* The homepage should show wile code immediately. Every feature
+   claim should be backed by a runnable example. Racket and Guile do this best;
+   Chez Scheme's code-free homepage is the cautionary example.
+2. *Clear call to action.* A prominent "Get Started" button in the hero area.
+   Every reviewed site that lacked this (Chez) felt like a reference page, not a
+   landing page.
+3. *Progressive disclosure.* Beginner / intermediate / advanced tiers prevent
+   information overload (OCaml, Python, Scala all do this well).
+4. *Identity over specification.* Lead with what makes wile distinctive, not
+   "R7RS compliant." CHICKEN's "compiles to portable C" and Guile's "extension
+   language" are memorable hooks. Wile's hook: a modern, batteries-included
+   Scheme with developer tools you'd expect from a mainstream language.
+5. *Show vitality.* Recent releases, active development signals. A static page
+   with no dates looks abandoned.
+6. *Unified documentation.* Keep everything under one roof. CHICKEN's
+   fragmentation across subdomains is a usability cost.
+7. *Minimal and clean.* Wile is a young project. A small, polished site is
+   better than an ambitious one with empty sections.
+
+** Target Audience (in priority order)
+
+1. Experienced programmers curious about Scheme or functional programming.
+2. Scheme users evaluating implementations.
+3. OCaml developers interested in the implementation.
+4. Students and educators.
+
+* Phase 1 — Foundation                                                :infra:
+
+Set up the Hugo project so it builds, has a theme, and can be deployed.
+
+** TODO Choose and install a Hugo theme
+
+Pick a clean, documentation-friendly theme. Strong candidates:
+
+- [[https://github.com/imfing/hextra][Hextra]] — modern docs theme (Next.js-style), built-in search, dark mode
+- [[https://github.com/alex-shpak/hugo-book][Hugo Book]] — clean documentation layout
+- [[https://github.com/adityatelange/hugo-PaperMod][PaperMod]] — minimal, fast, well-maintained
+
+Criteria: dark mode support, syntax highlighting, responsive, search, minimal
+JavaScript, active maintenance, good typography.
+
+Install as a git submodule under =themes/=.
+
+** TODO Create =hugo.toml= with base configuration
+
+- Site title, base URL, language
+- Theme selection
+- Menu structure
+- Syntax highlighting settings (Scheme support via Chroma)
+- Taxonomies (tags for docs, if needed)
+
+** TODO Add =.gitignore=
+
+Exclude =public/=, =resources/=, =.hugo_build.lock=.
+
+** TODO Verify the site builds and serves locally
+
+=hugo server -D= should render a placeholder page with the chosen theme.
+
+* Phase 2 — Homepage                                                 :content:
+
+The homepage is the most important page. It must answer three questions in
+under 10 seconds: What is wile? Why should I care? How do I start?
+
+** TODO Hero section
+
+- Tagline (something like: "A modern R7RS Scheme — from REPL to standalone
+  binary")
+- 1–2 sentences of description
+- Primary CTA: "Get Started" button
+- Secondary CTA: "Try an Example" or link to documentation
+
+** TODO Code showcase section
+
+3–4 tabbed or stacked code examples demonstrating wile's character:
+
+1. *Hello World / basics* — first-class functions, clean syntax
+2. *Macros* — hygienic macros with =syntax-rules=
+3. *REPL session* — show the interactive experience (paredit, highlighting)
+4. *Real program* — something practical (e.g., HTTP, file processing, or a
+   small DSL) to show wile is not just a toy
+
+All examples must be valid R7RS that wile can actually run. Verify against
+=../wile= before publishing.
+
+** TODO Feature highlights section
+
+A grid of 4–6 cards, each with a short title and one sentence:
+
+- *R7RS Compliant* — all 16 standard libraries
+- *Batteries Included* — 31+ bundled SRFIs
+- *Developer Tools* — LSP, DAP debugger, profiler
+- *Fast Iteration* — FASL bytecode caching, ahead-of-time compilation
+- *Embeddable* — OCaml and C APIs
+- *Modern REPL* — syntax highlighting, paredit, rainbow parens, completion
+
+** TODO Footer
+
+Organized columns:
+- Project (About, License, GitHub)
+- Documentation (Get Started, Guide, Reference, SRFIs)
+- Community (Discussions, Contributing)
+
+* Phase 3 — Getting Started                                          :content:
+
+A single, self-contained page that takes someone from zero to running wile
+code. This is the #1 conversion page.
+
+** TODO Installation instructions
+
+- Prerequisites (OCaml 5.3.0, opam, GMP)
+- Step-by-step commands (opam switch, deps, build, install)
+- Platform notes (Debian/Ubuntu, macOS)
+- Verify installation: =wile --version=
+
+** TODO First program walkthrough
+
+- Start the REPL: =wile repl=
+- Evaluate expressions interactively
+- Write a =.scm= file and run it: =wile run hello.scm=
+- Compile to a standalone binary: =wile compile hello.scm=
+- Use a shebang script: =#!/usr/bin/env wile=
+
+** TODO Editor setup
+
+- VS Code + LSP (brief)
+- Emacs + LSP (brief)
+- Vim/Neovim + LSP (brief)
+- Point to the LSP section in the reference for details
+
+* Phase 4 — Documentation Hub                                         :docs:
+
+Progressively disclosed documentation. Start with the most useful pages and
+expand over time. Every page should be self-contained and linkable.
+
+** TODO Documentation landing page
+
+A curated index organized by skill level:
+
+- *Getting Started* (link to Phase 3 page)
+- *Language Guide* — tutorial-style introduction to wile's Scheme
+- *Reference* — comprehensive coverage of built-ins and behavior
+- *Tool Guide* — REPL, LSP, DAP, profiler, package manager
+- *Embedding Guide* — OCaml and C APIs
+- *SRFI Reference* — list of bundled SRFIs with links
+
+** TODO Language guide (tutorial-style)
+
+Progressive chapters:
+
+1. Expressions and values
+2. Definitions and functions
+3. Data types (pairs, lists, vectors, strings, hash tables)
+4. Numeric tower (fixnum → bignum → rational → flonum → complex)
+5. Control flow (conditionals, loops, recursion, tail calls)
+6. Pattern matching and records (=define-record-type=)
+7. Macros (=syntax-rules=, =define-syntax=)
+8. Libraries (=define-library=, =import=, =export=)
+9. Continuations (=call/cc=, =dynamic-wind=)
+10. I/O and ports
+11. Error handling (=guard=, exceptions)
+
+Each chapter should have runnable examples verified against =../wile=.
+
+** TODO Tool guide
+
+Separate pages for each developer tool:
+
+- REPL (features, keybindings, paredit mode, customization)
+- LSP server (capabilities, configuration)
+- DAP debugger (setup, breakpoints, stepping)
+- Profiler (usage, flame graph output)
+- Package manager (creating packages, dependencies, virtual environments)
+- Build system (FASL compilation, ahead-of-time compilation)
+
+** TODO SRFI reference page
+
+A table of all 31+ bundled SRFIs with:
+
+- SRFI number and title
+- Link to the official SRFI document
+- Import form: =(import (srfi N))=
+- Brief one-line description
+
+Generate this from the =../wile/stdlib/srfi/= directory if possible.
+
+* Phase 5 — Supplementary Pages                                     :content:
+
+** TODO About page
+
+- What wile is (elevator pitch)
+- Architecture overview (Reader → Expander → Compiler → VM)
+- Design philosophy (compilation-only, no interpreter)
+- Implementation language (OCaml) and why
+- License (MIT)
+
+** TODO Contributing guide
+
+- How to report bugs
+- How to contribute code
+- Development setup (link to =../wile/CLAUDE.md= conventions)
+- Link to GitHub issues
+
+** TODO Releases / Changelog page
+
+- Current version and date
+- Changelog entries (can be sourced from git tags or a CHANGELOG file)
+- Shows the project is actively maintained
+
+* Phase 6 — Polish and Deploy                                       :infra:
+
+** TODO Syntax highlighting for Scheme
+
+Ensure Hugo's Chroma highlighter renders Scheme correctly. If not, configure
+a custom lexer or use a client-side highlighter as a fallback.
+
+** TODO Search
+
+Enable the theme's built-in search (most modern Hugo themes support this) or
+add a lightweight client-side search (Pagefind, Fuse.js).
+
+** TODO SEO and metadata
+
+- Open Graph tags for social sharing
+- Descriptive =<title>= and =<meta description>= on every page
+- Canonical URLs
+
+** TODO Favicon and branding
+
+- Design or commission a simple logo/favicon
+- Consistent color palette and typography
+
+** TODO Deployment pipeline
+
+- GitHub Actions: build on push to =main=, deploy to GitHub Pages
+- Verify the site builds cleanly in CI before deploying
+
+** TODO Custom domain (if desired)
+
+- Configure DNS and Hugo's =baseURL=
+- HTTPS via GitHub Pages or Cloudflare
+
+* Phase 7 — Future Enhancements                                     :future:
+
+These are not part of the initial build but are worth planning for.
+
+** TODO In-browser playground
+
+An interactive Scheme REPL in the browser. This is the single most effective
+feature for converting visitors (Python, Racket, Scala, OCaml, and Haskell
+all have one). Options:
+
+- Compile wile to WebAssembly (ambitious but ideal)
+- Server-side eval with a sandboxed backend (simpler but requires hosting)
+
+** TODO Blog / News section
+
+Hugo has native blog support. Use for release announcements, tutorials, and
+design notes. Shows project vitality.
+
+** TODO API reference (generated)
+
+If =odoc= or a similar tool can generate API docs from wile's =.mli= files,
+host them as a subsection of the docs.
+
+** TODO Showcase / Examples gallery
+
+A curated collection of interesting wile programs, from one-liners to small
+projects. Inspired by Racket's homepage code gallery.
+
+* Appendix: Review Summary
+
+What the best language websites get right:
+
+| Pattern                     | Exemplars             | Relevance to Wile             |
+|-----------------------------+-----------------------+-------------------------------|
+| Code in the hero            | Racket, Guile, OCaml  | High — show Scheme elegance   |
+| Interactive playground      | Scala, OCaml, Haskell | Future (Phase 7)              |
+| Progressive docs            | OCaml, Python, Scala  | High — Phase 4                |
+| Audience-aware onboarding   | Python, Racket, Scala | Moderate — Phase 3            |
+| Feature grid with evidence  | OCaml, Haskell        | High — Phase 2                |
+| Real-world applications     | Guile, Haskell        | Low (too early)               |
+| Ecosystem/package discovery | Scala, OCaml          | Future (once pkg mgr matures) |
+| Rich footer as sitemap      | All good sites        | High — Phase 2                |
+| Social proof / testimonials | OCaml, Haskell        | Low (too early)               |
+| Separated Install vs. Learn | Haskell, OCaml        | High — Phase 3                |
+| Version prominence in hero  | Scala, OCaml          | High — Phase 2                |
+| Dark mode                   | OCaml, most modern    | High — theme selection        |
