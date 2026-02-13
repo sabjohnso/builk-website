@@ -4,11 +4,11 @@ toc = false
 +++
 
 {{< hextra/hero-headline >}}
-  An R7RS Scheme Compiler
+  Wile Scheme
 {{< /hextra/hero-headline >}}
 
 {{< hextra/hero-subtitle >}}
-  Compiles Scheme to bytecode and runs it on a fast stack-based VM.&nbsp;<br class="sm:block hidden" />
+  An R7RS Scheme compiler that targets a fast stack-based VM.&nbsp;<br class="sm:block hidden" />
   Full numeric tower, hygienic macros, 36 SRFIs, and developer tooling built in.
 {{< /hextra/hero-subtitle >}}
 
