@@ -3,18 +3,18 @@ title = "Build System"
 weight = 6
 +++
 
-Wile Scheme includes a build system that compiles libraries, manages dependencies,
+Bilk Scheme includes a build system that compiles libraries, manages dependencies,
 and watches for changes.
 
 ## Commands
 
 ```sh
-wile build              # build all project libraries
-wile build --clean      # remove all .fasl cache files
-wile build --dry-run    # show what would be built
-wile build --verbose    # verbose output
-wile build --watch      # rebuild on source changes (Ctrl-C to stop)
-wile build --graph      # emit Graphviz DOT dependency graph
+bilk build              # build all project libraries
+bilk build --clean      # remove all .fasl cache files
+bilk build --dry-run    # show what would be built
+bilk build --verbose    # verbose output
+bilk build --watch      # rebuild on source changes (Ctrl-C to stop)
+bilk build --graph      # emit Graphviz DOT dependency graph
 ```
 
 ## How it works
@@ -36,7 +36,7 @@ than the `.fasl`, the library is recompiled.
 ## Watch mode
 
 ```sh
-wile build --watch
+bilk build --watch
 ```
 
 Monitors source directories for changes and automatically rebuilds stale
@@ -48,16 +48,16 @@ automatically.
 Visualize library dependencies as a Graphviz DOT graph:
 
 ```sh
-wile build --graph | dot -Tsvg -o deps.svg
+bilk build --graph | dot -Tsvg -o deps.svg
 ```
 
 ## Ahead-of-time compilation
 
-For standalone programs (not libraries), use `wile compile`:
+For standalone programs (not libraries), use `bilk compile`:
 
 ```sh
-wile compile program.scm -o program.fasl    # bytecode
-wile compile program.scm --exe -o program   # native executable
+bilk compile program.scm -o program.fasl    # bytecode
+bilk compile program.scm --exe -o program   # native executable
 ```
 
 See [Getting Started — Compiling programs]({{< relref "/docs/getting-started#compiling-programs" >}})
@@ -65,12 +65,12 @@ for details.
 
 ## Testing
 
-Wile Scheme also includes a test runner:
+Bilk Scheme also includes a test runner:
 
 ```sh
-wile test              # discover and run all tests
-wile test --verbose    # print file names during execution
-wile test test/foo.scm # run a specific test file
+bilk test              # discover and run all tests
+bilk test --verbose    # print file names during execution
+bilk test test/foo.scm # run a specific test file
 ```
 
 The test runner auto-discovers files matching `test-*.scm` or `*-test.scm` in

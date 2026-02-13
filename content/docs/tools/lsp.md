@@ -3,18 +3,18 @@ title = "LSP Server"
 weight = 2
 +++
 
-Wile Scheme includes a Language Server Protocol (LSP) server for editor integration.
+Bilk Scheme includes a Language Server Protocol (LSP) server for editor integration.
 
 ## Starting the server
 
 ```sh
-wile lsp
+bilk lsp
 ```
 
 By default the server communicates over stdin/stdout. To use a TCP socket:
 
 ```sh
-wile lsp --port 5007
+bilk lsp --port 5007
 ```
 
 ## Capabilities
@@ -34,7 +34,7 @@ wile lsp --port 5007
 See [Getting Started — Editor setup]({{< relref "/docs/getting-started#editor-setup" >}})
 for VS Code, Emacs, and Neovim configuration examples.
 
-The key is to point your editor's LSP client at `wile lsp` as the server
+The key is to point your editor's LSP client at `bilk lsp` as the server
 command for Scheme files.
 
 ## How it works

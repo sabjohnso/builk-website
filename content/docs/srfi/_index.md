@@ -3,7 +3,7 @@ title = "SRFI Reference"
 weight = 4
 +++
 
-Wile Scheme bundles 36 SRFIs (Scheme Requests for Implementation). Import them with
+Bilk Scheme bundles 36 SRFIs (Scheme Requests for Implementation). Import them with
 `(import (srfi N))`.
 
 ## Built-in SRFIs

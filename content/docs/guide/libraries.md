@@ -3,7 +3,7 @@ title = "Libraries"
 weight = 8
 +++
 
-Wile Scheme implements the R7RS library system for organizing code into reusable
+Bilk Scheme implements the R7RS library system for organizing code into reusable
 modules.
 
 ## define-library
@@ -76,7 +76,7 @@ The `export` declaration lists which bindings are visible to importers:
 
 ## Standard libraries
 
-Wile Scheme provides all 16 R7RS standard libraries:
+Bilk Scheme provides all 16 R7RS standard libraries:
 
 | Library | Purpose |
 |---------|---------|
@@ -111,8 +111,8 @@ Use `cond-expand` to conditionally include code based on available features:
 (define-library (mylib compat)
   (import (scheme base))
   (cond-expand
-    (wile
-      (begin (define (impl) "wile")))
+    (bilk
+      (begin (define (impl) "bilk")))
     (else
       (begin (define (impl) "other"))))
   (export impl))

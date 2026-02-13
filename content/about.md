@@ -1,16 +1,16 @@
 +++
-title = "About Wile Scheme"
+title = "About Bilk Scheme"
 toc = true
 +++
 
-## What is Wile Scheme?
+## What is Bilk Scheme?
 
-Wile Scheme is an R7RS Scheme implementation written in OCaml. It compiles
+Bilk Scheme is an R7RS Scheme implementation written in OCaml. It compiles
 Scheme source to bytecode and executes it on a stack-based virtual machine —
 there is no interpreter mode. Every `eval` compiles to bytecode first, then
 executes.
 
-Wile Scheme aims to be a modern, batteries-included Scheme with the developer tools
+Bilk Scheme aims to be a modern, batteries-included Scheme with the developer tools
 you'd expect from a mainstream language: an LSP server, a debugger, a profiler,
 a package manager, and an interactive REPL with syntax highlighting and
 structural editing.
@@ -37,7 +37,7 @@ The VM supports first-class continuations (stack-copying `call/cc`),
 compiled to bytecode before execution. This keeps the execution model uniform
 and means optimizations benefit all code paths.
 
-**R7RS first.** Wile Scheme implements the full R7RS standard including all 16
+**R7RS first.** Bilk Scheme implements the full R7RS standard including all 16
 `(scheme ...)` libraries, the library system (`define-library`, `import`,
 `export`), hygienic macros, and first-class continuations.
 
@@ -49,7 +49,7 @@ process. Embedding APIs are provided for both OCaml and C.
 
 ## Implementation
 
-Wile Scheme is implemented in OCaml (37 modules, ~21k lines) with a test suite of
+Bilk Scheme is implemented in OCaml (37 modules, ~21k lines) with a test suite of
 1600+ tests across 40 test files. It requires OCaml 5.3.0 with the BER
 MetaOCaml variant and uses GMP (via zarith) for arbitrary-precision arithmetic.
 
@@ -59,8 +59,8 @@ The 12 bytecode instructions are: `Halt`, `Const`, `Lookup`, `Define`,
 
 ## License
 
-Wile Scheme is released under the [MIT License](https://opensource.org/licenses/MIT).
+Bilk Scheme is released under the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Source code
 
-The source is hosted on GitHub: [github.com/wile-scheme/wile](https://github.com/wile-scheme/wile)
+The source is hosted on GitHub: [github.com/bilk-scheme/bilk](https://github.com/bilk-scheme/bilk)

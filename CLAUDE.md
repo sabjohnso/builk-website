@@ -1,9 +1,9 @@
-# Wile Website
+# Bilk Website
 
-Static website for the **wile** programming language — an R7RS Scheme compiler
-written in OCaml. Built with [Hugo](https://gohugo.io/).
+Static website for the **Bilk Scheme** programming language — an R7RS Scheme
+compiler written in OCaml. Built with [Hugo](https://gohugo.io/).
 
-The wile compiler source lives at `../wile`. We do not modify that code from
+The Bilk compiler source lives at `../bilk`. We do not modify that code from
 this repo, but we reference it for accurate documentation of features,
 architecture, and usage.
 
@@ -35,10 +35,10 @@ flake.nix               Nix flake (dev shell with Hugo + Go)
 .envrc                  direnv integration (activates flake)
 ```
 
-## Wile at a Glance
+## Bilk at a Glance
 
-When writing content about wile, refer to `../wile/README.md` and
-`../wile/CLAUDE.md` for authoritative details. Key facts:
+When writing content about Bilk, refer to `../bilk/README.md` and
+`../bilk/CLAUDE.md` for authoritative details. Key facts:
 
 - **R7RS compliant** — all 16 `(scheme ...)` standard libraries
 - **Compiles to bytecode** — no interpreter; every `eval` compiles first
@@ -58,12 +58,12 @@ When writing content about wile, refer to `../wile/README.md` and
 ## Conventions
 
 - **Content accuracy**: All technical claims must be verifiable against the
-  wile source at `../wile`. When in doubt, read the code.
+  Bilk source at `../bilk`. When in doubt, read the code.
 - **Hugo idioms**: Follow standard Hugo directory conventions. Use
   page bundles for content that has associated assets. Use shortcodes for
   reusable content patterns.
 - **Scheme code examples**: Use fenced code blocks with `scheme` as the
-  language identifier. Ensure all examples are valid R7RS that wile can
+  language identifier. Ensure all examples are valid R7RS that Bilk can
   actually run.
 - **Front matter**: Use TOML (`+++`) for consistency across content files.
 - **Minimal custom templates**: Prefer configuring the theme over writing

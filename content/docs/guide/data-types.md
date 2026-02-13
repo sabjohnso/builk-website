@@ -3,7 +3,7 @@ title = "Data Types"
 weight = 3
 +++
 
-Wile Scheme supports all R7RS data types plus extensions from bundled SRFIs.
+Bilk Scheme supports all R7RS data types plus extensions from bundled SRFIs.
 
 ## Pairs and lists
 
@@ -97,9 +97,9 @@ Hash tables provide key-value lookup (from SRFI 69):
 (import (srfi 69))
 
 (define ht (make-hash-table))
-(hash-table-set! ht 'name "wile")
+(hash-table-set! ht 'name "bilk")
 (hash-table-set! ht 'version 1)
-(hash-table-ref ht 'name)     ; => "wile"
+(hash-table-ref ht 'name)     ; => "bilk"
 (hash-table-exists? ht 'name) ; => #t
 (hash-table-keys ht)          ; => (name version)
 ```

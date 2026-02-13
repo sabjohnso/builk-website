@@ -3,18 +3,18 @@ title = "Debugger"
 weight = 3
 +++
 
-Wile Scheme includes a Debug Adapter Protocol (DAP) server for step-through debugging.
+Bilk Scheme includes a Debug Adapter Protocol (DAP) server for step-through debugging.
 
 ## Starting a debug session
 
 ```sh
-wile debug program.scm
+bilk debug program.scm
 ```
 
 By default the DAP server communicates over stdin/stdout. To use a TCP socket:
 
 ```sh
-wile debug program.scm --port 5008
+bilk debug program.scm --port 5008
 ```
 
 ## Features
@@ -51,10 +51,10 @@ global environment.
 
 ## Editor integration
 
-Any DAP-compatible editor can connect to the Wile Scheme debugger:
+Any DAP-compatible editor can connect to the Bilk Scheme debugger:
 
 - **VS Code** — use a generic DAP extension or configure `launch.json`
 - **Emacs** — use [dape](https://github.com/svaante/dape)
 - **Neovim** — use [nvim-dap](https://github.com/mfussenegger/nvim-dap)
 
-Configure the debug adapter to run `wile debug <file>` as the launch command.
+Configure the debug adapter to run `bilk debug <file>` as the launch command.

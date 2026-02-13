@@ -101,7 +101,7 @@ Recursion is the primary way to express iteration in Scheme:
 
 ## Tail calls
 
-Wile Scheme guarantees tail-call optimization. A call in tail position reuses the
+Bilk Scheme guarantees tail-call optimization. A call in tail position reuses the
 current stack frame, allowing unbounded recursion:
 
 ```scheme

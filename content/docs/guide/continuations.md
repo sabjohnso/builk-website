@@ -3,7 +3,7 @@ title = "Continuations"
 weight = 9
 +++
 
-Wile Scheme supports first-class continuations via stack-copying `call/cc`.
+Bilk Scheme supports first-class continuations via stack-copying `call/cc`.
 
 ## call/cc
 

@@ -3,15 +3,15 @@ title = "Releases"
 toc = false
 +++
 
-Wile Scheme is under active development. No versioned releases have been published yet.
+Bilk Scheme is under active development. No versioned releases have been published yet.
 
 ## Building from source
 
-To use Wile Scheme today, build from the `main` branch:
+To use Bilk Scheme today, build from the `main` branch:
 
 ```sh
-git clone https://github.com/wile-scheme/wile.git
-cd wile
+git clone https://github.com/bilk-scheme/bilk.git
+cd bilk
 opam switch create . ocaml-variants.5.3.0+BER
 eval $(opam env)
 opam install . --deps-only --with-test -y
@@ -24,7 +24,7 @@ instructions.
 
 ## Following development
 
-- **Source**: [github.com/wile-scheme/wile](https://github.com/wile-scheme/wile)
-- **Discussions**: [github.com/wile-scheme/wile/discussions](https://github.com/wile-scheme/wile/discussions)
+- **Source**: [github.com/bilk-scheme/bilk](https://github.com/bilk-scheme/bilk)
+- **Discussions**: [github.com/bilk-scheme/bilk/discussions](https://github.com/bilk-scheme/bilk/discussions)
 
 This page will be updated when versioned releases are available.

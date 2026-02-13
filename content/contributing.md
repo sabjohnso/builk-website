@@ -3,12 +3,12 @@ title = "Contributing"
 toc = true
 +++
 
-Contributions to Wile Scheme are welcome. Here's how to get involved.
+Contributions to Bilk Scheme are welcome. Here's how to get involved.
 
 ## Reporting bugs
 
 Open an issue on GitHub:
-[github.com/wile-scheme/wile/issues](https://github.com/wile-scheme/wile/issues)
+[github.com/bilk-scheme/bilk/issues](https://github.com/bilk-scheme/bilk/issues)
 
 Include:
 - What you expected to happen
@@ -21,8 +21,8 @@ Include:
 1. Clone the repository and create a local opam switch:
 
 ```sh
-git clone https://github.com/wile-scheme/wile.git
-cd wile
+git clone https://github.com/bilk-scheme/bilk.git
+cd bilk
 opam switch create . ocaml-variants.5.3.0+BER
 eval $(opam env)
 ```
@@ -42,7 +42,7 @@ dune test
 
 ## Development practices
 
-Wile Scheme follows strict test-driven development (red-green-refactor):
+Bilk Scheme follows strict test-driven development (red-green-refactor):
 
 1. **Write a failing test** that demonstrates the bug or specifies the new behavior
 2. **Write the minimum code** to make the test pass
@@ -83,4 +83,4 @@ Each `lib/` module has a corresponding `test/test_<module>.ml`.
 ## Discussions
 
 For questions, ideas, and general discussion:
-[github.com/wile-scheme/wile/discussions](https://github.com/wile-scheme/wile/discussions)
+[github.com/bilk-scheme/bilk/discussions](https://github.com/bilk-scheme/bilk/discussions)

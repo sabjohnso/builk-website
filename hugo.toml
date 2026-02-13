@@ -1,5 +1,5 @@
-baseURL = "https://sabjohnso.github.io/wile-website/"
-title = "Wile Scheme"
+baseURL = "https://sabjohnso.github.io/bilk-website/"
+title = "Bilk Scheme"
 languageCode = "en-us"
 description = "An R7RS Scheme compiler written in OCaml. Compiles to bytecode, full numeric tower, hygienic macros, 36 SRFIs, LSP, debugger, and profiler."
 enableRobotsTXT = true
@@ -44,7 +44,7 @@ enableRobotsTXT = true
 
 [[menu.main]]
   name = "GitHub"
-  url = "https://github.com/sabjohnso/wile"
+  url = "https://github.com/sabjohnso/bilk"
   weight = 6
   [menu.main.params]
     icon = "github"
@@ -65,7 +65,7 @@ enableRobotsTXT = true
 
 [params.editURL]
   enable = true
-  base = "https://github.com/sabjohnso/wile-website/edit/main/content"
+  base = "https://github.com/sabjohnso/bilk-website/edit/main/content"
 
 # SEO
 [params.page.seo]

@@ -1,6 +1,6 @@
-# Wile Scheme Website
+# Bilk Scheme Website
 
-Source for the [Wile Scheme](https://sabjohnso.github.io/wile-website/)
+Source for the [Bilk Scheme](https://sabjohnso.github.io/bilk-website/)
 website. Built with [Hugo](https://gohugo.io/) and the
 [Hextra](https://github.com/imfing/hextra) theme.
 
@@ -20,13 +20,13 @@ echo 'experimental-features = nix-command flakes' >> ~/.config/nix/nix.conf
 ## Getting started
 
 ```sh
-git clone https://github.com/sabjohnso/wile-website.git
-cd wile-website
+git clone https://github.com/sabjohnso/bilk-website.git
+cd bilk-website
 nix develop
 hugo server -D
 ```
 
-Open <http://localhost:1313/wile-website/> to see the site locally.
+Open <http://localhost:1313/bilk-website/> to see the site locally.
 
 ### Using direnv (optional)
 
@@ -102,7 +102,7 @@ nix develop --command hugo server -D
 - **Front matter**: Use TOML (`+++`), not YAML (`---`).
 - **Scheme code blocks**: Use `scheme` as the language identifier.
 - **Accuracy**: All technical claims must be verifiable against the
-  [wile source](https://github.com/sabjohnso/wile). When in doubt, read the
+  [bilk source](https://github.com/sabjohnso/bilk). When in doubt, read the
   code.
 - **Shortcodes**: Use Hextra shortcodes (`tabs`, `cards`, `feature-grid`, etc.)
   for structured content. See the

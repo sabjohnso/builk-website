@@ -3,13 +3,13 @@ title = "Profiler"
 weight = 4
 +++
 
-Wile Scheme includes a runtime profiler that instruments function calls and produces
+Bilk Scheme includes a runtime profiler that instruments function calls and produces
 reports in multiple formats.
 
 ## Running the profiler
 
 ```sh
-wile profile program.scm
+bilk profile program.scm
 ```
 
 ## Output formats
@@ -19,7 +19,7 @@ Specify the format with `--format`:
 ### Text (default)
 
 ```sh
-wile profile program.scm --format text
+bilk profile program.scm --format text
 ```
 
 Prints a flat table to stderr sorted by self-time, with columns for self%,
@@ -28,7 +28,7 @@ total time, self time, call count, procedure name, and source location.
 ### Flame graph
 
 ```sh
-wile profile program.scm --format flamegraph > profile.svg
+bilk profile program.scm --format flamegraph > profile.svg
 ```
 
 Produces a self-contained SVG with embedded JavaScript for interactive
@@ -37,7 +37,7 @@ exploration. Open it in a browser to click and zoom into hot call stacks.
 ### Chrome trace
 
 ```sh
-wile profile program.scm --format trace > profile.json
+bilk profile program.scm --format trace > profile.json
 ```
 
 Produces Chrome Trace Event JSON format. Load it in `chrome://tracing` or

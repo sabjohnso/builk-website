@@ -1,16 +1,16 @@
-#+TITLE: Wile Website — Implementation Plan
+#+TITLE: Bilk Website — Implementation Plan
 #+STARTUP: showall
 
 * Overview
 
-This plan lays out the phased construction of the wile-scheme website using
+This plan lays out the phased construction of the bilk-scheme website using
 Hugo. It is informed by a review of how other programming language communities
 present themselves online (Python, Racket, Scala, OCaml, Haskell, Chez Scheme,
 GNU Guile, CHICKEN Scheme).
 
 ** Design Principles (distilled from the review)
 
-1. *Code first.* The homepage should show wile code immediately. Every feature
+1. *Code first.* The homepage should show Bilk code immediately. Every feature
    claim should be backed by a runnable example. Racket and Guile do this best;
    Chez Scheme's code-free homepage is the cautionary example.
 2. *Clear call to action.* A prominent "Get Started" button in the hero area.
@@ -18,15 +18,15 @@ GNU Guile, CHICKEN Scheme).
    landing page.
 3. *Progressive disclosure.* Beginner / intermediate / advanced tiers prevent
    information overload (OCaml, Python, Scala all do this well).
-4. *Identity over specification.* Lead with what makes wile distinctive, not
+4. *Identity over specification.* Lead with what makes Bilk distinctive, not
    "R7RS compliant." CHICKEN's "compiles to portable C" and Guile's "extension
-   language" are memorable hooks. Wile's hook: a modern, batteries-included
+   language" are memorable hooks. Bilk's hook: a modern, batteries-included
    Scheme with developer tools you'd expect from a mainstream language.
 5. *Show vitality.* Recent releases, active development signals. A static page
    with no dates looks abandoned.
 6. *Unified documentation.* Keep everything under one roof. CHICKEN's
    fragmentation across subdomains is a usability cost.
-7. *Minimal and clean.* Wile is a young project. A small, polished site is
+7. *Minimal and clean.* Bilk is a young project. A small, polished site is
    better than an ambitious one with empty sections.
 
 ** Target Audience (in priority order)
@@ -61,7 +61,7 @@ Site builds and serves with Hextra theme via =nix develop --command hugo server 
 * DONE Phase 2 — Homepage                                            :content:
 
 The homepage is the most important page. It must answer three questions in
-under 10 seconds: What is wile? Why should I care? How do I start?
+under 10 seconds: What is Bilk? Why should I care? How do I start?
 
 ** DONE Hero section
 
@@ -80,8 +80,8 @@ a "See It in Action" section heading:
 3. *Numeric Tower* — rational and complex arithmetic (verified against test suite)
 4. *Libraries* — =define-library= / =import= / =export= R7RS module system
 
-All examples verified against =../wile= test suite. Removed =rationalize=
-(not implemented in wile).
+All examples verified against =../bilk= test suite. Removed =rationalize=
+(not implemented in Bilk).
 
 ** DONE Feature highlights section
 
@@ -98,7 +98,7 @@ Embeddable, Interactive REPL.
 
 * DONE Phase 3 — Getting Started                                     :content:
 
-A single, self-contained page that takes someone from zero to running wile
+A single, self-contained page that takes someone from zero to running Bilk
 code. This is the #1 conversion page.
 
 ** DONE Installation instructions
@@ -106,21 +106,21 @@ code. This is the #1 conversion page.
 - Prerequisites section with OCaml 5.3.0+BER, opam, GMP
 - Tabbed GMP install (Debian/Ubuntu vs macOS)
 - Step-by-step: clone, opam switch, deps, build, install
-- Verify with =wile -e '(display "ready")'=
+- Verify with =bilk -e '(display "ready")'=
 
 ** DONE First program walkthrough
 
-- REPL usage (=wile= with no args), REPL commands (=,help=, =,paredit=)
-- Write and run =hello.scm= (=wile hello.scm=)
-- Single expression eval (=wile -e=)
-- Compile to FASL bytecode (=wile compile -o .fasl=)
-- Compile to standalone executable (=wile compile --exe=)
-- Shebang scripts (=#!/usr/bin/env wile=)
+- REPL usage (=bilk= with no args), REPL commands (=,help=, =,paredit=)
+- Write and run =hello.scm= (=bilk hello.scm=)
+- Single expression eval (=bilk -e=)
+- Compile to FASL bytecode (=bilk compile -o .fasl=)
+- Compile to standalone executable (=bilk compile --exe=)
+- Shebang scripts (=#!/usr/bin/env bilk=)
 
 ** DONE Editor setup
 
 - Tabbed setup for VS Code, Emacs (eglot), Neovim (nvim-lspconfig)
-- All pointing at =wile lsp= as the server command
+- All pointing at =bilk lsp= as the server command
 
 * DONE Phase 4 — Documentation Hub                                      :docs:
 
@@ -224,7 +224,7 @@ An interactive Scheme REPL in the browser. This is the single most effective
 feature for converting visitors (Python, Racket, Scala, OCaml, and Haskell
 all have one). Options:
 
-- Compile wile to WebAssembly (ambitious but ideal)
+- Compile Bilk to WebAssembly (ambitious but ideal)
 - Server-side eval with a sandboxed backend (simpler but requires hosting)
 
 ** TODO Blog / News section
@@ -234,19 +234,19 @@ design notes. Shows project vitality.
 
 ** TODO API reference (generated)
 
-If =odoc= or a similar tool can generate API docs from wile's =.mli= files,
+If =odoc= or a similar tool can generate API docs from Bilk's =.mli= files,
 host them as a subsection of the docs.
 
 ** TODO Showcase / Examples gallery
 
-A curated collection of interesting wile programs, from one-liners to small
+A curated collection of interesting Bilk programs, from one-liners to small
 projects. Inspired by Racket's homepage code gallery.
 
 * Appendix: Review Summary
 
 What the best language websites get right:
 
-| Pattern                     | Exemplars             | Relevance to Wile             |
+| Pattern                     | Exemplars             | Relevance to Bilk             |
 |-----------------------------+-----------------------+-------------------------------|
 | Code in the hero            | Racket, Guile, OCaml  | High — show Scheme elegance   |
 | Interactive playground      | Scala, OCaml, Haskell | Future (Phase 7)              |

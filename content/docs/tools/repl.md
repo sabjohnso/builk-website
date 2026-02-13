@@ -3,10 +3,10 @@ title = "REPL"
 weight = 1
 +++
 
-Start the REPL by running `wile` with no arguments:
+Start the REPL by running `bilk` with no arguments:
 
 ```sh
-wile
+bilk
 ```
 
 ## Features
@@ -16,7 +16,7 @@ wile
 - **Paredit** — structural editing that keeps parentheses balanced
 - **Multi-line input** — automatic detection of incomplete expressions
 - **Tab completion** — completes Scheme identifiers and REPL commands
-- **History** — persistent across sessions, saved to `~/.wile_history`
+- **History** — persistent across sessions, saved to `~/.bilk_history`
 - **Emacs keybindings** — Ctrl-A/E, Ctrl-B/F, Ctrl-K, Ctrl-U, Alt-Left/Right
 - **Library watching** — in package projects, rebuilds stale libraries in the background
 
@@ -73,9 +73,9 @@ Switch between built-in themes or load a custom theme file:
 ,theme /path/to/my-theme.scm
 ```
 
-You can also set the default theme with the `WILE_THEME` environment variable.
+You can also set the default theme with the `BILK_THEME` environment variable.
 
-Settings (theme, paredit mode) persist across sessions in `~/.wile/config`.
+Settings (theme, paredit mode) persist across sessions in `~/.bilk/config`.
 
 ## Keyboard shortcuts
 

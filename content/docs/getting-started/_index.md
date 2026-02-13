@@ -3,12 +3,12 @@ title = "Getting Started"
 weight = 1
 +++
 
-This guide walks you through installing Wile Scheme and writing your first
+This guide walks you through installing Bilk Scheme and writing your first
 Scheme program.
 
 ## Prerequisites
 
-Wile Scheme requires:
+Bilk Scheme requires:
 
 - **OCaml 5.3.0** with the BER MetaOCaml variant (`ocaml-variants.5.3.0+BER`)
 - **opam** (the OCaml package manager)
@@ -37,8 +37,8 @@ Install GMP for your platform:
 Clone the repository and create a local opam switch:
 
 ```sh
-git clone https://github.com/wile-scheme/wile.git
-cd wile
+git clone https://github.com/bilk-scheme/bilk.git
+cd bilk
 opam switch create . ocaml-variants.5.3.0+BER
 eval $(opam env)
 ```
@@ -59,17 +59,17 @@ dune install
 Verify the installation:
 
 ```sh
-wile -e '(display "ready")'
+bilk -e '(display "ready")'
 ```
 
 You should see `ready` printed to the terminal.
 
 ## The REPL
 
-Start the interactive REPL by running `wile` with no arguments:
+Start the interactive REPL by running `bilk` with no arguments:
 
 ```sh
-wile
+bilk
 ```
 
 Try evaluating some expressions:
@@ -108,7 +108,7 @@ Create a file called `hello.scm`:
 Run it:
 
 ```sh
-wile hello.scm
+bilk hello.scm
 ```
 
 ```
@@ -118,24 +118,24 @@ Hello, world!
 You can also evaluate a single expression from the command line:
 
 ```sh
-wile -e '(for-each display (list 3 "+" 4 "=" (+ 3 4)))'
+bilk -e '(for-each display (list 3 "+" 4 "=" (+ 3 4)))'
 ```
 
 ## Compiling programs
 
-Wile Scheme can compile Scheme source ahead of time. There are two targets:
+Bilk Scheme can compile Scheme source ahead of time. There are two targets:
 
 **FASL bytecode** — a portable binary format:
 
 ```sh
-wile compile hello.scm -o hello.fasl
-wile run hello.fasl
+bilk compile hello.scm -o hello.fasl
+bilk run hello.fasl
 ```
 
 **Standalone executable** — a self-contained binary:
 
 ```sh
-wile compile hello.scm --exe -o hello
+bilk compile hello.scm --exe -o hello
 ./hello
 ```
 
@@ -144,7 +144,7 @@ wile compile hello.scm --exe -o hello
 Add a shebang line to make a Scheme file directly executable:
 
 ```scheme
-#!/usr/bin/env wile
+#!/usr/bin/env bilk
 (import (scheme base)
         (scheme write)
         (scheme process-context))
@@ -163,16 +163,16 @@ chmod +x script.scm
 
 ## Editor setup
 
-Wile Scheme includes a Language Server Protocol (LSP) server that provides
+Bilk Scheme includes a Language Server Protocol (LSP) server that provides
 diagnostics, go-to-definition, find-references, hover, and completion.
 
 Start the LSP server with:
 
 ```sh
-wile lsp
+bilk lsp
 ```
 
-Configure your editor to use `wile lsp` as the language server command for
+Configure your editor to use `bilk lsp` as the language server command for
 Scheme files.
 
 {{< tabs items="VS Code,Emacs,Neovim" >}}
@@ -191,7 +191,7 @@ Scheme files.
   }
   ```
 
-  Point the LSP client at `wile lsp` as the server command for `scheme` files.
+  Point the LSP client at `bilk lsp` as the server command for `scheme` files.
   {{< /tab >}}
 
   {{< tab >}}
@@ -199,7 +199,7 @@ Scheme files.
 
   ```elisp
   (add-to-list 'eglot-server-programs
-               '(scheme-mode . ("wile" "lsp")))
+               '(scheme-mode . ("bilk" "lsp")))
   ```
 
   Then run `M-x eglot` in a Scheme buffer.
@@ -209,13 +209,13 @@ Scheme files.
   Using [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig):
 
   ```lua
-  vim.lsp.config('wile', {
-    cmd = { 'wile', 'lsp' },
+  vim.lsp.config('bilk', {
+    cmd = { 'bilk', 'lsp' },
     filetypes = { 'scheme' },
     root_markers = { '.git' },
   })
 
-  vim.lsp.enable('wile')
+  vim.lsp.enable('bilk')
   ```
   {{< /tab >}}
 
@@ -223,6 +223,6 @@ Scheme files.
 
 ## Next steps
 
-You now have Wile Scheme installed and know how to run, compile, and edit Scheme code.
+You now have Bilk Scheme installed and know how to run, compile, and edit Scheme code.
 Explore the [Guide]({{< relref "/docs/guide" >}}) for in-depth coverage of
 macros, the numeric tower, libraries, and developer tools.

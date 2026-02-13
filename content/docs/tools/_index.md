@@ -3,8 +3,8 @@ title = "Tool Guide"
 weight = 3
 +++
 
-Wile Scheme ships with a complete developer toolchain. Each tool is a subcommand of the
-`wile` binary.
+Bilk Scheme ships with a complete developer toolchain. Each tool is a subcommand of the
+`bilk` binary.
 
 {{< cards >}}
   {{< card link="repl" title="REPL" subtitle="Interactive development with syntax highlighting and paredit." >}}
