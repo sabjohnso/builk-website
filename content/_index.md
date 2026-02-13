@@ -1,5 +1,5 @@
 +++
-title = "wile"
+title = "Wile Scheme"
 toc = false
 +++
 

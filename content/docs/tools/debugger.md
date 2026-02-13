@@ -3,7 +3,7 @@ title = "Debugger"
 weight = 3
 +++
 
-Wile includes a Debug Adapter Protocol (DAP) server for step-through debugging.
+Wile Scheme includes a Debug Adapter Protocol (DAP) server for step-through debugging.
 
 ## Starting a debug session
 
@@ -51,7 +51,7 @@ global environment.
 
 ## Editor integration
 
-Any DAP-compatible editor can connect to the wile debugger:
+Any DAP-compatible editor can connect to the Wile Scheme debugger:
 
 - **VS Code** — use a generic DAP extension or configure `launch.json`
 - **Emacs** — use [dape](https://github.com/svaante/dape)

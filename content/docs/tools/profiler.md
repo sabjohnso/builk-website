@@ -3,7 +3,7 @@ title = "Profiler"
 weight = 4
 +++
 
-Wile includes a runtime profiler that instruments function calls and produces
+Wile Scheme includes a runtime profiler that instruments function calls and produces
 reports in multiple formats.
 
 ## Running the profiler

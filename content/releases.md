@@ -3,11 +3,11 @@ title = "Releases"
 toc = false
 +++
 
-Wile is under active development. No versioned releases have been published yet.
+Wile Scheme is under active development. No versioned releases have been published yet.
 
 ## Building from source
 
-To use wile today, build from the `main` branch:
+To use Wile Scheme today, build from the `main` branch:
 
 ```sh
 git clone https://github.com/wile-scheme/wile.git

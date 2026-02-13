@@ -3,7 +3,7 @@ title = "Contributing"
 toc = true
 +++
 
-Contributions to wile are welcome. Here's how to get involved.
+Contributions to Wile Scheme are welcome. Here's how to get involved.
 
 ## Reporting bugs
 
@@ -42,7 +42,7 @@ dune test
 
 ## Development practices
 
-Wile follows strict test-driven development (red-green-refactor):
+Wile Scheme follows strict test-driven development (red-green-refactor):
 
 1. **Write a failing test** that demonstrates the bug or specifies the new behavior
 2. **Write the minimum code** to make the test pass

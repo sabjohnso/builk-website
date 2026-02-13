@@ -3,7 +3,7 @@ title = "Error Handling"
 weight = 11
 +++
 
-Wile provides R7RS exception handling with `guard`, `raise`, and error objects.
+Wile Scheme provides R7RS exception handling with `guard`, `raise`, and error objects.
 
 ## Raising errors
 

@@ -3,7 +3,7 @@ title = "Package Manager"
 weight = 5
 +++
 
-Wile includes a local package manager for installing and managing Scheme
+Wile Scheme includes a local package manager for installing and managing Scheme
 libraries.
 
 ## Commands
@@ -66,7 +66,7 @@ Packages are installed to `~/.wile/packages/<name>/<version>/`.
 
 ## Dependency resolution
 
-When a package declares dependencies, wile resolves them using semantic
+When a package declares dependencies, Wile Scheme resolves them using semantic
 versioning. The resolver picks the latest installed version that satisfies each
 constraint and detects circular dependencies.
 
@@ -94,6 +94,6 @@ so libraries installed there take precedence over system-wide packages.
 
 | Variable | Description |
 |----------|-------------|
-| `WILE_HOME` | Override for Wile home directory (default: `~/.wile/`) |
+| `WILE_HOME` | Override for Wile Scheme home directory (default: `~/.wile/`) |
 | `WILE_PATH` | Additional library search directories (colon-separated) |
 | `WILE_VENV` | Path to active virtual environment |

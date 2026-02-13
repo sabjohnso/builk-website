@@ -3,7 +3,7 @@ title = "Macros"
 weight = 7
 +++
 
-Wile supports hygienic macros via `syntax-rules`. Macros transform code at
+Wile Scheme supports hygienic macros via `syntax-rules`. Macros transform code at
 compile time without the accidental-capture bugs of traditional Lisp macros.
 
 ## define-syntax
@@ -75,7 +75,7 @@ arbitrary expression.
 
 ## Hygiene
 
-Wile's macros are hygienic: bindings introduced by a macro cannot conflict
+Wile Scheme's macros are hygienic: bindings introduced by a macro cannot conflict
 with bindings at the use site.
 
 ```scheme

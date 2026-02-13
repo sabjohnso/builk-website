@@ -1,5 +1,5 @@
 baseURL = "https://sabjohnso.github.io/wile-website/"
-title = "wile"
+title = "Wile Scheme"
 languageCode = "en-us"
 description = "An R7RS Scheme compiler written in OCaml. Compiles to bytecode, full numeric tower, hygienic macros, 36 SRFIs, LSP, debugger, and profiler."
 enableRobotsTXT = true

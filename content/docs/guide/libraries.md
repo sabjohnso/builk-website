@@ -3,7 +3,7 @@ title = "Libraries"
 weight = 8
 +++
 
-Wile implements the R7RS library system for organizing code into reusable
+Wile Scheme implements the R7RS library system for organizing code into reusable
 modules.
 
 ## define-library
@@ -76,7 +76,7 @@ The `export` declaration lists which bindings are visible to importers:
 
 ## Standard libraries
 
-Wile provides all 16 R7RS standard libraries:
+Wile Scheme provides all 16 R7RS standard libraries:
 
 | Library | Purpose |
 |---------|---------|

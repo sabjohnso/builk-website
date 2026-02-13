@@ -3,7 +3,7 @@ title = "LSP Server"
 weight = 2
 +++
 
-Wile includes a Language Server Protocol (LSP) server for editor integration.
+Wile Scheme includes a Language Server Protocol (LSP) server for editor integration.
 
 ## Starting the server
 

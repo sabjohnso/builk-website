@@ -3,7 +3,7 @@ title = "I/O & Ports"
 weight = 10
 +++
 
-Wile uses the R7RS port model for input and output. Ports represent streams of
+Wile Scheme uses the R7RS port model for input and output. Ports represent streams of
 characters or bytes.
 
 ## Standard ports

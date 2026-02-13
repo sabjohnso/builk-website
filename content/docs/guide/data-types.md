@@ -3,7 +3,7 @@ title = "Data Types"
 weight = 3
 +++
 
-Wile supports all R7RS data types plus extensions from bundled SRFIs.
+Wile Scheme supports all R7RS data types plus extensions from bundled SRFIs.
 
 ## Pairs and lists
 

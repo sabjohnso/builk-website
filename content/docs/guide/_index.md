@@ -3,7 +3,7 @@ title = "Language Guide"
 weight = 2
 +++
 
-A tutorial-style introduction to Scheme programming with wile. Each chapter
+A tutorial-style introduction to Scheme programming with Wile Scheme. Each chapter
 builds on the previous one and includes runnable examples.
 
 {{< cards >}}

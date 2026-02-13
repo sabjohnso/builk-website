@@ -3,7 +3,7 @@ title = "Build System"
 weight = 6
 +++
 
-Wile includes a build system that compiles libraries, manages dependencies,
+Wile Scheme includes a build system that compiles libraries, manages dependencies,
 and watches for changes.
 
 ## Commands
@@ -65,7 +65,7 @@ for details.
 
 ## Testing
 
-Wile also includes a test runner:
+Wile Scheme also includes a test runner:
 
 ```sh
 wile test              # discover and run all tests

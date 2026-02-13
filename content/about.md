@@ -1,15 +1,16 @@
 +++
-title = "About Wile"
+title = "About Wile Scheme"
 toc = true
 +++
 
-## What is wile?
+## What is Wile Scheme?
 
-Wile is an R7RS Scheme implementation written in OCaml. It compiles Scheme
-source to bytecode and executes it on a stack-based virtual machine — there is
-no interpreter mode. Every `eval` compiles to bytecode first, then executes.
+Wile Scheme is an R7RS Scheme implementation written in OCaml. It compiles
+Scheme source to bytecode and executes it on a stack-based virtual machine —
+there is no interpreter mode. Every `eval` compiles to bytecode first, then
+executes.
 
-Wile aims to be a modern, batteries-included Scheme with the developer tools
+Wile Scheme aims to be a modern, batteries-included Scheme with the developer tools
 you'd expect from a mainstream language: an LSP server, a debugger, a profiler,
 a package manager, and an interactive REPL with syntax highlighting and
 structural editing.
@@ -36,7 +37,7 @@ The VM supports first-class continuations (stack-copying `call/cc`),
 compiled to bytecode before execution. This keeps the execution model uniform
 and means optimizations benefit all code paths.
 
-**R7RS first.** Wile implements the full R7RS standard including all 16
+**R7RS first.** Wile Scheme implements the full R7RS standard including all 16
 `(scheme ...)` libraries, the library system (`define-library`, `import`,
 `export`), hygienic macros, and first-class continuations.
 
@@ -48,7 +49,7 @@ process. Embedding APIs are provided for both OCaml and C.
 
 ## Implementation
 
-Wile is implemented in OCaml (37 modules, ~21k lines) with a test suite of
+Wile Scheme is implemented in OCaml (37 modules, ~21k lines) with a test suite of
 1600+ tests across 40 test files. It requires OCaml 5.3.0 with the BER
 MetaOCaml variant and uses GMP (via zarith) for arbitrary-precision arithmetic.
 
@@ -58,7 +59,7 @@ The 12 bytecode instructions are: `Halt`, `Const`, `Lookup`, `Define`,
 
 ## License
 
-Wile is released under the [MIT License](https://opensource.org/licenses/MIT).
+Wile Scheme is released under the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Source code
 

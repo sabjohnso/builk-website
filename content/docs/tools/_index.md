@@ -3,7 +3,7 @@ title = "Tool Guide"
 weight = 3
 +++
 
-Wile ships with a complete developer toolchain. Each tool is a subcommand of the
+Wile Scheme ships with a complete developer toolchain. Each tool is a subcommand of the
 `wile` binary.
 
 {{< cards >}}

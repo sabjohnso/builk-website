@@ -3,7 +3,7 @@ title = "Numeric Tower"
 weight = 4
 +++
 
-Wile implements the full R7RS numeric tower. Numbers are automatically promoted
+Wile Scheme implements the full R7RS numeric tower. Numbers are automatically promoted
 to wider types as needed.
 
 ## The five numeric types

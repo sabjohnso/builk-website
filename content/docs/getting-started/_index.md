@@ -3,12 +3,12 @@ title = "Getting Started"
 weight = 1
 +++
 
-This guide walks you through installing wile and writing your first Scheme
-program.
+This guide walks you through installing Wile Scheme and writing your first
+Scheme program.
 
 ## Prerequisites
 
-Wile requires:
+Wile Scheme requires:
 
 - **OCaml 5.3.0** with the BER MetaOCaml variant (`ocaml-variants.5.3.0+BER`)
 - **opam** (the OCaml package manager)
@@ -123,7 +123,7 @@ wile -e '(for-each display (list 3 "+" 4 "=" (+ 3 4)))'
 
 ## Compiling programs
 
-Wile can compile Scheme source ahead of time. There are two targets:
+Wile Scheme can compile Scheme source ahead of time. There are two targets:
 
 **FASL bytecode** — a portable binary format:
 
@@ -163,7 +163,7 @@ chmod +x script.scm
 
 ## Editor setup
 
-Wile includes a Language Server Protocol (LSP) server that provides
+Wile Scheme includes a Language Server Protocol (LSP) server that provides
 diagnostics, go-to-definition, find-references, hover, and completion.
 
 Start the LSP server with:
@@ -223,6 +223,6 @@ Scheme files.
 
 ## Next steps
 
-You now have wile installed and know how to run, compile, and edit Scheme code.
+You now have Wile Scheme installed and know how to run, compile, and edit Scheme code.
 Explore the [Guide]({{< relref "/docs/guide" >}}) for in-depth coverage of
 macros, the numeric tower, libraries, and developer tools.
