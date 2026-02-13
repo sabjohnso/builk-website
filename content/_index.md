@@ -3,10 +3,6 @@ title = "Wile Scheme"
 toc = false
 +++
 
-{{< hextra/hero-headline >}}
-  Wile Scheme
-{{< /hextra/hero-headline >}}
-
 {{< hextra/hero-subtitle >}}
   An R7RS Scheme compiler that targets a fast stack-based VM.&nbsp;<br class="sm:block hidden" />
   Full numeric tower, hygienic macros, 36 SRFIs, and developer tooling built in.
