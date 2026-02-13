@@ -10,10 +10,26 @@ libraries.
 
 | Command | Description |
 |---------|-------------|
+| `wile pkg init [NAME]` | Initialize a new project with `package.scm` (default name: current directory) |
 | `wile pkg install [PATH]` | Install a package from a directory (default: `.`) |
 | `wile pkg list` | List all installed packages and versions |
 | `wile pkg info <name> [version]` | Show package details |
 | `wile pkg remove <name> <version>` | Remove a specific package version |
+| `wile pkg lock` | Resolve dependencies and write a lockfile |
+| `wile pkg why <name>` | Explain why a package is in the dependency tree |
+| `wile pkg fetch <name> [version]` | Download a package from a repository |
+| `wile pkg search <query>` | Search repositories for packages |
+
+### Repository management
+
+Repositories are remote sources of packages. Manage them with `wile pkg repo`:
+
+| Command | Description |
+|---------|-------------|
+| `wile pkg repo add <name> <url>` | Add a package repository |
+| `wile pkg repo list` | List configured repositories |
+| `wile pkg repo remove <name>` | Remove a repository |
+| `wile pkg repo update <name>` | Update a repository's package index |
 
 ## Package descriptor
 
