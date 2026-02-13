@@ -51,7 +51,13 @@ enableRobotsTXT = true
 
 [params.navbar]
   displayTitle = true
-  displayLogo = false
+  displayLogo = true
+
+  [params.navbar.logo]
+    path = "favicon.svg"
+    dark = "favicon-dark.svg"
+    width = 24
+    height = 24
 
 [params.footer]
   displayCopyright = true
