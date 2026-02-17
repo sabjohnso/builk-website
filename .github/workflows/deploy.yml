@@ -1,14 +1,9 @@
 # Deploy generated Hugo site to the bilk-scheme.github.io repository.
 #
-# One-time setup (before the first run):
-#
-#   1. Generate an SSH deploy key:
-#        ssh-keygen -t ed25519 -C "deploy" -f deploy_key -N ""
-#   2. Add deploy_key.pub as a **deploy key** on
-#      bilk-scheme/bilk-scheme.github.io with **write access**.
-#   3. Add deploy_key (private key) as a repository **secret** named
-#      DEPLOY_KEY on bilk-scheme/bilk-scheme-website.
-#   4. Delete the local key files.
+# Authentication uses the bilk-website-deploy GitHub App.
+# Repository secrets required:
+#   APP_ID          — the GitHub App's numeric ID
+#   APP_PRIVATE_KEY — the App's private key (.pem)
 
 name: Deploy to bilk-scheme.github.io
 
@@ -41,11 +36,20 @@ jobs:
       - name: Build
         run: hugo --minify
 
+      - name: Generate app token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          owner: bilk-scheme
+          repositories: bilk-scheme.github.io
+
       - name: Checkout target repo
         uses: actions/checkout@v4
         with:
           repository: bilk-scheme/bilk-scheme.github.io
-          ssh-key: ${{ secrets.DEPLOY_KEY }}
+          token: ${{ steps.app-token.outputs.token }}
           path: target
 
       - name: Sync build output
