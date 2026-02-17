@@ -1,4 +1,16 @@
-name: Deploy Hugo site to GitHub Pages
+# Deploy generated Hugo site to the bilk-scheme.github.io repository.
+#
+# One-time setup (before the first run):
+#
+#   1. Generate an SSH deploy key:
+#        ssh-keygen -t ed25519 -C "deploy" -f deploy_key -N ""
+#   2. Add deploy_key.pub as a **deploy key** on
+#      bilk-scheme/bilk-scheme.github.io with **write access**.
+#   3. Add deploy_key (private key) as a repository **secret** named
+#      DEPLOY_KEY on bilk-scheme/bilk-scheme-website.
+#   4. Delete the local key files.
+
+name: Deploy to bilk-scheme.github.io
 
 on:
   push:
@@ -7,18 +19,12 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout source
         uses: actions/checkout@v4
 
       - name: Setup Go
@@ -35,17 +41,26 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Checkout target repo
+        uses: actions/checkout@v4
         with:
-          path: ./public
+          repository: bilk-scheme/bilk-scheme.github.io
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
+          path: target
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ github.event.repository.html_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+      - name: Sync build output
+        run: |
+          rsync -a --delete --exclude='.git' public/ target/
+
+      - name: Commit and push
+        run: |
+          cd target
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to deploy"
+          else
+            git commit -m "Deploy from bilk-scheme-website@${GITHUB_SHA::7}"
+            git push
+          fi
