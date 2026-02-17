@@ -16,6 +16,11 @@ bilk
 - **Paredit** — structural editing that keeps parentheses balanced
 - **Multi-line input** — automatic detection of incomplete expressions
 - **Tab completion** — completes Scheme identifiers and REPL commands
+- **Interactive tab completion menu** — visual popup for ambiguous completions; Tab/Shift-Tab to cycle, Enter to accept, Escape to cancel
+- **Context-sensitive completion** — completes identifiers, file paths inside strings, library names in `import` forms, and arguments for `,load`, `,theme`, and `,reload`
+- **Session checkpoints** — save and restore REPL state with `,checkpoint` and `,revert`
+- **Datum comment highlighting** — `#;` styles the entire commented expression
+- **Auto-indentation** — smart indentation for `def*`, `let*`, `lambda*`, `cond`, `begin`, `when`, `unless`, and more
 - **History** — persistent across sessions, saved to `~/.bilk_history`
 - **Emacs keybindings** — Ctrl-A/E, Ctrl-B/F, Ctrl-K, Ctrl-U, Alt-Left/Right
 - **Library watching** — in package projects, rebuilds stale libraries in the background
@@ -38,6 +43,12 @@ Commands are prefixed with a comma:
 | `,build` | Trigger library rebuild |
 | `,theme <name>` | Switch theme: `dark`, `light`, `none`, or a file path |
 | `,paredit` | Toggle structural editing mode |
+| `,clear` | Clear terminal and scrollback |
+| `,checkpoint [name]` | Save REPL session state to FASL |
+| `,revert [name]` | Restore a saved checkpoint |
+| `,checkpoints` | List all available checkpoints |
+| `,save-session <file>` | Save all checkpoints to a binary file |
+| `,load-session <file>` | Load checkpoints from a binary file |
 
 ## Paredit mode
 
@@ -59,6 +70,23 @@ Structural operations:
 | Wrap | Wrap the next s-expression in parentheses |
 | Splice | Remove the enclosing parentheses |
 | Raise | Replace the enclosing list with the current s-expression |
+
+S-expression navigation:
+
+| Key | Action |
+|-----|--------|
+| Ctrl-Alt-F | Move forward by s-expression |
+| Ctrl-Alt-B | Move backward by s-expression |
+| Ctrl-Alt-U | Move up out of the current list |
+| Ctrl-Alt-N | Move forward out of the enclosing list |
+| Ctrl-Alt-D | Descend into the next list |
+| Ctrl-Alt-P | Move backward into the enclosing list |
+
+Indentation:
+
+- **Tab** indents the current line (when not completing an identifier)
+- **Shift-Tab** re-indents all lines
+- **Enter** auto-indents the new line and lines below it
 
 Toggle paredit on or off with `,paredit`.
 
@@ -89,5 +117,7 @@ Settings (theme, paredit mode) persist across sessions in `~/.bilk/config`.
 | Ctrl-U | Kill from cursor to start of line |
 | Ctrl-W | Kill previous word |
 | Up / Down | Navigate history |
-| Tab | Complete identifier or command |
+| Tab | Complete identifier or command; indent current line (paredit) |
+| Shift-Tab | Re-indent all lines (paredit) |
+| Ctrl-Alt-F / Ctrl-Alt-B | Move forward/backward by s-expression (paredit) |
 | Ctrl-D | Exit (on empty line) |

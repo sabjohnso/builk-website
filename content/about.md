@@ -49,8 +49,8 @@ process. Embedding APIs are provided for both OCaml and C.
 
 ## Implementation
 
-Bilk Scheme is implemented in OCaml (37 modules, ~21k lines) with a test suite of
-1600+ tests across 40 test files. It requires OCaml 5.3.0 with the BER
+Bilk Scheme is implemented in OCaml (54 modules, ~26k lines) with a test suite of
+2100+ tests across 59 test files. It requires OCaml 5.3.0 with the BER
 MetaOCaml variant and uses GMP (via zarith) for arbitrary-precision arithmetic.
 
 The 12 bytecode instructions are: `Halt`, `Const`, `Lookup`, `Define`,

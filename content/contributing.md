@@ -64,8 +64,8 @@ property-based tests. Property tests are preferred for capturing invariants
 
 ```
 bin/main.ml         CLI entry point
-lib/                Core library (37 modules)
-test/               Test suite (40 files, 1600+ tests)
+lib/                Core library (54 modules)
+test/               Test suite (59 files, 2100+ tests)
 stdlib/srfi/        Bundled SRFI library sources
 examples/           Example programs
 ```

@@ -1,4 +1,4 @@
-module github.com/sabjohnso/wile-website
+module github.com/bilk-scheme/bilk-scheme-website
 
 go 1.25.5
 
